@@ -1,0 +1,35 @@
+# complete this configuration, and rename it into config.yml
+---
+jenkins:
+  -
+    name: terracotta-oss
+    url: https://terracotta-oss.ci.cloudbees.com/
+    username: hello
+    password: world
+  -
+    name: ehcache
+    url: https://ehcache.ci.cloudbees.com/
+    username: hello
+    password: world
+  -
+    name: jenkins-tc
+    url: http://my.hosted.jenkins:8080
+    username: hello
+    password: world
+
+github:
+  -
+    organization: Terracotta-OSS
+    username: ""
+    password: ""
+  -
+    organization: ehcache
+    username: ""
+    password: ""
+
+stash:
+  -
+    prefix: TAB
+    url: http://my.hosted.stash:9000
+    username: hello
+    password: world

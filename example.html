@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitXJenkins report
+    </title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+
+    <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+
+
+    <script>
+        $(document).ready(function () {
+            $('#repositoriesTable').DataTable(
+                    {"iDisplayLength": 25}
+            );
+        });
+    </script>
+
+</head>
+<body>
+
+<h1>Git Repositories table</h1>
+
+<div class="container-fluid">
+    <p>
+        The current report was generated on 2016-02-09T00:28:41-05:00 with the following information :
+    </p>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+            <table class="table">
+                <tbody>
+                
+                <tr>
+                    <td>anthony.dahanne@gmail.com @ terracotta-oss</td>
+                    <td><a href="https://terracotta-oss.ci.cloudbees.com/">https://terracotta-oss.ci.cloudbees.com/</a></td>
+                </tr>
+                
+                <tr>
+                    <td>anthony.dahanne@gmail.com @ ehcache</td>
+                    <td><a href="https://ehcache.ci.cloudbees.com/">https://ehcache.ci.cloudbees.com/</a></td>
+                </tr>
+                
+                <tr>
+                    <td>Terracotta-OSS</td>
+                    <td><a href="https://github.com/Terracotta-OSS">https://github.com/Terracotta-OSS</a></td>
+                </tr>
+                
+                <tr>
+                    <td>ehcache</td>
+                    <td><a href="https://github.com/ehcache">https://github.com/ehcache</a></td>
+                </tr>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p>
+        The below table is showing what are the Jenkins jobs existing for each Git repository. <br/>
+    </p>
+
+    <table id="repositoriesTable" class="table table-hover">
+        <thead>
+        <tr>
+            <th>Project</th>
+            <th>Name</th>
+            <th>Jobs</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/accelerated-build-now-plugin">accelerated-build-now-plugin</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/bm-hadoop-connector">bm-hadoop-connector</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/cache-load-tester">cache-load-tester</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/geocache">geocache</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/ipc-eventbus">ipc-eventbus</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/ipc-eventbus/"> ipc-eventbus </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/ipc-eventbus-pull-requests/"> ipc-eventbus-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/job-dsl-plugin">job-dsl-plugin</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/junit-categories-maven-plugin">junit-categories-maven-plugin</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/nexus-dependency-management-plugin">nexus-dependency-management-plugin</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/offheap-store">offheap-store</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/offheap-store/"> offheap-store </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/offheap-store-pull-requests/"> offheap-store-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/post-completed-build-result-plugin">post-completed-build-result-plugin</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/properties-metadata-maven-plugin">properties-metadata-maven-plugin</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/statistics">statistics</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/statistics/"> statistics </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/statistics-pull-requests/"> statistics-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/terracotta-apis">terracotta-apis</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-apis/"> terracotta-apis </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-apis-pull-requests/"> terracotta-apis-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/terracotta-configuration">terracotta-configuration</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-configuration/"> terracotta-configuration </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-configuration-pull-requests/"> terracotta-configuration-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/terracotta-core">terracotta-core</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-core/"> terracotta-core </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-core-pull-requests/"> terracotta-core-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/terracotta-management">terracotta-management</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-management/"> terracotta-management </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-management-pull-requests/"> terracotta-management-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/terracotta-newrelic-plugin">terracotta-newrelic-plugin</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/terracotta-parent">terracotta-parent</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/Terracotta-OSS">Terracotta-OSS</a></td>
+            <td><a href="https://github.com/Terracotta-OSS/terracotta-platform">terracotta-platform</a></td>
+            <td><a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-platform/"> terracotta-platform </a> || <a href="https://terracotta-oss.ci.cloudbees.com/job/terracotta-platform-pull-requests/"> terracotta-platform-pull-requests </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/ehcache">ehcache</a></td>
+            <td><a href="https://github.com/ehcache/ehcache-jcache">ehcache-jcache</a></td>
+            <td><a href="https://ehcache.ci.cloudbees.com/job/ehcache-jcache/"> ehcache-jcache </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/ehcache">ehcache</a></td>
+            <td><a href="https://github.com/ehcache/ehcache.github.io">ehcache.github.io</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/ehcache">ehcache</a></td>
+            <td><a href="https://github.com/ehcache/ehcache.org-site">ehcache.org-site</a></td>
+            <td></td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/ehcache">ehcache</a></td>
+            <td><a href="https://github.com/ehcache/ehcache3">ehcache3</a></td>
+            <td><a href="https://ehcache.ci.cloudbees.com/job/ehcache3/"> ehcache3 </a> || <a href="https://ehcache.ci.cloudbees.com/job/ehcache3-pull-requests/"> ehcache3-pull-requests </a> || <a href="https://ehcache.ci.cloudbees.com/job/ehcache3-static-analysis/"> ehcache3-static-analysis </a> || </td>
+        </tr>
+        
+        <tr class="success">
+            <td><a href="https://github.com/ehcache">ehcache</a></td>
+            <td><a href="https://github.com/ehcache/sizeof">sizeof</a></td>
+            <td><a href="https://ehcache.ci.cloudbees.com/job/sizeof/"> sizeof </a> || <a href="https://ehcache.ci.cloudbees.com/job/sizeof-pull-requests/"> sizeof-pull-requests </a> || </td>
+        </tr>
+        
+        </tbody>
+    </table>
+</div>
+<script>
+    $("td:empty").parent().addClass('warning').removeClass('success')
+</script>
+</body>
+</html>
