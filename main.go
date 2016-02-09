@@ -231,10 +231,17 @@ func jenkinsParser(jenkinsName string, jenkinsURL string, username string, passw
         return nil, err
     }
 
+    status, err := jenkins.Poll();
+    if(status != 200) {
+        log.Fatalf("Jenkins replied with status %v ; check your credentials for %v", status, jenkinsURL)
+        return nil, err
+    }
+
     jobs, err := jenkins.GetAllJobs();
     if err != nil {
         return nil, err
     }
+
 
     path := xmlpath.MustCompile("//scm/userRemoteConfigs/hudson.plugins.git.UserRemoteConfig/url")
 
