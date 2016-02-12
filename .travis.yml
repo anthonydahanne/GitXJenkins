@@ -4,8 +4,9 @@ script: go build gitxjenkins.go
 
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "gitxjenkins"
+  api_key:
+    secure: i1jNp0FNxpIxcdLZnNNdjY9DdNj7/a+CwPNmPWcnPkfA5yhBczZB5XYo0RYdQHbTie145gWtxaB7sV5EY6UtY2WCsUssrAchDRdmW17Q+P1IdgK6BB4ovRI37nVjZBpiaOuMvuXOVzDcsv9eIi5A4OJzzd4f242SPDUvsQ6+z+qTiI0KrtnAvMz3acUMpDAkI5udGltSDyps7KCQKV3W3flimCwjmr4Ph09FrfSaMEz459iWno0/nnzLtAZiI7yRKc8iECoc2YWI06pqldBsGKZy/mjkLWQwPPeFmwVTbr0iGwqGtxSdotbzaoTQ9UxMJC7dzRVlPld0Ti284ZgPOF9ZvFwEGTzYl7S4n0MilXdTpU1vlTioDrRYXEaw/xtxiiuhrYIUTlLE5u9C8ThMFf5XgaazHBjQhHyJLnyXe+PEXbH+qKUzbfJtRl5dL+2P0DQ5Ws0BlZ1B8NO4Ry2UiCGefyo11Vw26t7fNXbmSMKBqcD1iefh5nxNrgzf+eQ7adNBtw96d7nzPEMfMD6FAPSkZJ0IQDhQ2mLJD/Lfc3OAfJOr7B85RwiDWysAGiMJXazXWNyLEBmF5D83vqtz0kqbO99DmPOvMDIMCS/AM5Uv2EBB1xbtwDiPzgw1TzobuG2zJs6FXEO6EkZugn9HDOYrQB7UKbDyW9EOk6d6UL4=
+  file: gitxjenkins
   skip_cleanup: true
   on:
     tags: true
