@@ -1,4 +1,5 @@
 # complete this configuration, and rename it into config.yml
+# username/password entries for jenkins can be removed if no auth required
 ---
 jenkins:
   -
