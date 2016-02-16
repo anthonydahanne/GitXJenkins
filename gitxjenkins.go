@@ -8,7 +8,7 @@ import (
     "net/url"
     "strings"
     "bytes"
-    "launchpad.net/xmlpath"
+    "gopkg.in/xmlpath.v1"
     "gopkg.in/yaml.v2"
     "io/ioutil"
     "sort"
@@ -226,10 +226,19 @@ func jenkinsParser(jenkinsName string, jenkinsURL string, username string, passw
 
     var resultJobs []Job
 
-    jenkins, err := gojenkins.CreateJenkins(jenkinsURL, username, password).Init()
+    var jenkins *gojenkins.Jenkins
+    var err error
+
+    if (username != "") {
+        jenkins, err = gojenkins.CreateJenkins(jenkinsURL, username, password).Init()
+    } else {
+        jenkins, err = gojenkins.CreateJenkins(jenkinsURL).Init()
+    }
     if err != nil {
         return nil, err
     }
+
+    fmt.Printf("%s: Connected\n", jenkinsName)
 
     status, err := jenkins.Poll();
     if(status != 200) {
@@ -237,11 +246,14 @@ func jenkinsParser(jenkinsName string, jenkinsURL string, username string, passw
         return nil, err
     }
 
+    fmt.Printf("%s: Polled\n", jenkinsName)
+
     jobs, err := jenkins.GetAllJobs();
     if err != nil {
         return nil, err
     }
 
+    fmt.Printf("%s: GetAllJobs done (%d jobs)\n", jenkinsName, len(jobs))
 
     path := xmlpath.MustCompile("//scm/userRemoteConfigs/hudson.plugins.git.UserRemoteConfig/url")
 
