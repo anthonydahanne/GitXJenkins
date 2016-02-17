@@ -127,6 +127,8 @@ func main() {
 }
 
 func printResultsAsText(allRepos []GitRepository) {
+    fmt.Printf("Starting generating text output \n")
+
     for _, repo := range allRepos {
         if (len(repo.Jobs) > 0) {
             jobsAsStrings := ""
@@ -141,10 +143,15 @@ func printResultsAsText(allRepos []GitRepository) {
             fmt.Printf("%v/%v is an orphan repo\n", repo.Project, repo.Name)
         }
     }
+    fmt.Printf("Text output finished\n\n")
+
 }
 
 
 func printResultsAsHtml(allRepos []GitRepository, configuration Configuration) {
+    fmt.Printf("Starting generating html file, output.html \n")
+
+
     currentTime := time.Now().Format(time.RFC3339)
 
 
@@ -153,7 +160,11 @@ func printResultsAsHtml(allRepos []GitRepository, configuration Configuration) {
             log.Fatal(err)
         }
     }
-    t, err := template.ParseFiles("./template.html")
+    templateAsString,err := FSString(false, "/template.html")
+
+    check(err)
+
+    t, err := template.New("template").Parse(templateAsString)
 
     type ConfigElement struct {
         Name    string
@@ -206,6 +217,7 @@ func printResultsAsHtml(allRepos []GitRepository, configuration Configuration) {
     check(err)
 
     w.Flush()
+    fmt.Printf("html file, output.html is generated\n")
 
 }
 

@@ -2,7 +2,7 @@ language: go
 go:
   - 1.5
 
-script: go build gitxjenkins.go
+script: go build gitxjenkins.go template.go
 
 deploy:
   provider: releases
