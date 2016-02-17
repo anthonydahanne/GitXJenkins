@@ -4,7 +4,7 @@ import (
     "github.com/google/go-github/github"
     "fmt"
     "github.com/bndr/gojenkins"
-    "github.com/xoom/stash"
+    "github.com/anthonydahanne/stash"
     "net/url"
     "strings"
     "bytes"
