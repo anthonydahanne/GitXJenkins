@@ -50,6 +50,7 @@ type Job struct {
     Name        string
     Url         string
     ScmUrl      string
+    LastBuildStatus int
 }
 
 type GitRepository struct {
@@ -284,7 +285,18 @@ func jenkinsParser(jenkinsName string, jenkinsURL string, username string, passw
             continue
         }
         if scmUrl, ok := path.String(root); ok {
-            resultJobs = append(resultJobs, Job{JenkinsName: jenkinsName, Name:job.GetName(), Url:job.GetDetails().URL, ScmUrl:scmUrl})
+            build, _ := job.GetLastBuild();
+            var lastBuildStatus int;
+            if(build == nil) {
+                lastBuildStatus = 2;
+            } else {
+                if(build.IsGood()) {
+                    lastBuildStatus = 0;
+                } else {
+                    lastBuildStatus = 1;
+                }
+            }
+            resultJobs = append(resultJobs, Job{JenkinsName: jenkinsName, Name:job.GetName(), Url:job.GetDetails().URL, ScmUrl:scmUrl, LastBuildStatus:lastBuildStatus})
         }
     }
     return resultJobs, nil

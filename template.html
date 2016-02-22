@@ -28,7 +28,7 @@
     <script>
         $(document).ready(function () {
             $('#repositoriesTable').DataTable(
-                    {"iDisplayLength": 25}
+                    {"iDisplayLength": 100}
             );
         });
     </script>
@@ -78,7 +78,14 @@
         <tr class="success">
             <td><a href="{{ .ProjectUrl }}">{{ .Project }}</a></td>
             <td><a href="{{ .Url }}">{{ .Name }}</a></td>
-            <td>{{range .Jobs}}<a href="{{ .Url }}"> {{ .Name }} </a> || {{end}}</td>
+            <td>
+                {{range $index, $job := .Jobs}}
+                {{if $index}}||{{end}}
+                <a
+                    {{if eq $job.LastBuildStatus 0}} class="text-success" {{else if eq $job.LastBuildStatus 1 }} class="text-danger" {{else}} class="text-muted" {{end}}
+                    href="{{ .Url }}">{{ .Name }}</a>
+                {{end}}
+            </td>
         </tr>
         {{else}}
         <tr>
@@ -87,6 +94,9 @@
         {{end}}
         </tbody>
     </table>
+    <p>
+        Source code and instructions at <a href="https://github.com/anthonydahanne/GitXJenkins">https://github.com/anthonydahanne/GitXJenkins</a>
+    </p>
 </div>
 <script>
     $("td:empty").parent().addClass('warning').removeClass('success')
